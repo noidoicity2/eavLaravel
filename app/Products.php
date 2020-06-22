@@ -4,7 +4,7 @@ namespace App;
 
 use Eav\Model;
 
-class \Products extends Model
+class Products extends Model
 {
     const ENTITY  = 'product';
 

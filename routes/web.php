@@ -1,5 +1,6 @@
 <?php
 
+use App\Products;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +16,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+Route::get('/add', function () {
+    Products::create([
+        'name' => 'Flamethrower',
+        'sku'  => '1HJK92',
+        'upc'  => 'SHNDUU451888',
+        'description' => 'Not a Flamethrower',
+        'search' => 1
+    ]);
+});
+Route::get('/pr', function () {
+    $product = Products::all(['attr.*']);
+    return $product;
+
+
 });
